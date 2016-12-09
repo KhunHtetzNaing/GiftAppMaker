@@ -1,0 +1,193 @@
+﻿Version=6.3
+NumberOfModules=8
+Module1=Step1
+Module2=Step2
+Module3=Step3
+Module4=Step4
+Module5=Step5
+Module6=Preview
+Module7=Starter
+Module8=About
+Build1=Default,com.htetznaing.giftappmaker
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />~\n~<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~'AdMob~\n~AddApplicationText(~\n~<meta-data android:name="com.google.android.gms.version"~\n~  android:value="@integer/google_play_services_version"/>~\n~<activity android:name="com.google.android.gms.ads.AdActivity"~\n~  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>~\n~~\n~)~\n~'End of AdMob
+IconFile=
+NumberOfFiles=20
+File1=checkmark.png
+File2=chooseimage.png
+File3=FinalStep.bal
+File4=Fonts.zip
+File5=GiftApp.apk
+File6=icon.png
+File7=imv.png
+File8=imv1.png
+File9=l1.bal
+File10=l2.bal
+File11=l3.bal
+File12=l4.bal
+File13=lay1.bal
+File14=love.png
+File15=menu.bal
+File16=mp3.png
+File17=myanmar.ttf
+File18=pause.png
+File19=play.png
+File20=save.png
+NumberOfLibraries=16
+Library1=core
+Library2=abzipunzip
+Library3=animatetext
+Library4=animationplus
+Library5=icosslideanimation
+Library6=dialogs
+Library7=mlfiles
+Library8=nnlzipsigner
+Library9=id
+Library10=phone
+Library11=floatingactionbutton
+Library12=xmllayoutbuilder
+Library13=nnlpackagechanger
+Library14=admob
+Library15=mwadmobinterstitial2 (2)
+Library16=stringutils
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Gift App Maker
+	#VersionCode: 1
+	#VersionName: 1.0
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+		#AdditionalJar: zipsigner-lib-1.17.jar
+	#AdditionalJar: zipio-lib-1.8.jar
+	#AdditionalJar: kellinwood-logging-lib-1.1.jar
+	#AdditionalJar: axml.jar
+	#AdditionalRes: D:\Android\android-sdk\extras\google\google-play-services\libproject\google-play-services_lib\res, com.google.android.gms
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: False
+	#AdditionalRes: C:\Users\Ht3tzN4ing\Documents\B4A Projects\Temp Mail\FloatingButton, de.amberhome.objects.floatingactionbutton
+	#AdditionalRes: ..\resource
+#End Region
+
+Sub Process_Globals
+	Dim ad As Timer
+End Sub
+
+Sub Globals
+	Dim sd As String = File.DirRootExternal & "/"
+Dim zip As ABZipUnzip
+
+Dim imv As ImageView
+Dim ibg As BitmapDrawable
+Dim abg As ColorDrawable
+Dim l1,lb As Label
+Dim anit As AnimateText
+Dim mm As Typeface
+Dim bar As Panel
+Dim b,bd As Button
+Dim Banner As AdView
+Dim Interstitial As mwAdmobInterstitial
+Dim p As Phone
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	p.SetScreenOrientation(1)
+	If p.SdkVersion > 19 Then
+		Banner.Initialize("Banner","ca-app-pub-4173348573252986/6151874158")
+		Banner.LoadAd
+		Activity.AddView(Banner,0%x,90%y,100%x,10%y)
+		
+		Interstitial.Initialize("Interstitial","ca-app-pub-4173348573252986/7628607354")
+		Interstitial.LoadAd
+		ad.Initialize("ad",30000)
+		ad.Enabled = True
+	End If
+	
+		File.Copy(File.DirAssets,"GiftApp.apk",File.DirRootExternal,"GiftApp.zip")
+	zip.ABUnzip(sd & "GiftApp.zip", sd & "GiftAppMaker")
+	File.Delete(sd,"GiftApp.zip")
+'
+File.Copy(File.DirAssets,"Fonts.zip",File.DirRootExternal,"Fonts.zip")
+zip.ABUnzip(sd & "Fonts.zip",sd & "MyanmarFonts")
+File.Delete(File.DirRootExternal,"Fonts.zip")
+
+bd.Initialize("bd")
+bd.Text = "Delete Project"
+''###########################################################################
+	l1.Initialize("l1")
+	l1.Text = "Gift App Maker"
+	Activity.AddView(l1,5%x,3%y,90%x,10%y)
+	l1.Gravity = Gravity.CENTER
+	l1.TextSize = 30
+	l1.TextColor = Colors.Black
+	l1.Typeface = Typeface.DEFAULT_BOLD
+	bar.Initialize("bar")
+	bar.Color = Colors.White
+Activity.AddView(bar,5%x,(l1.Top+l1.Height),90%x,0.5%y)
+	
+	mm = mm.LoadFromAssets("myanmar.ttf")
+	lb.Initialize("")
+	lb.Gravity = Gravity.CENTER
+	lb.Textsize =  20
+	lb.TextColor = Colors.White
+	lb.Typeface = mm
+	anit.initialize("",Me,300)
+	anit.Run("Make Easily your Own" &CRLF & "Birthday Wish App for" & CRLF & "Your Dear!",lb)
+	anit.Endable = True
+	Activity.AddView(lb,10%x,10%y,80%x,20%y)
+	
+	abg.Initialize(Colors.RGB(255,10,144),1)
+	Activity.Background = abg
+ibg.Initialize(LoadBitmap(File.DirAssets,"imv.png"))
+imv.Initialize("imv")
+imv.Background = ibg
+ Activity.AddView(imv,20%x,40%y,200dip,200dip)
+ 
+ b.Initialize("b")
+ b.Text = ">> Start >>"
+ Activity.AddView(b,50%x,75%y,45%x,10%y)
+ 
+ Dim lbf As Label
+ lbf.Initialize("lbf")
+ lbf.Text = "Developed By Khun Htetz Naing"
+ Activity.AddView(lbf,0%x,85%y,100%x,5%y)
+ lbf.Gravity = Gravity.CENTER
+ lbf.TextColor = Colors.White
+
+		Activity.AddView(bd,10%x,30%y,50%x,10%y)
+End Sub
+
+Sub imv_Click
+	StartActivity(About)
+End Sub
+Sub bd_Click
+	Dim ml As MLfiles
+ml.rmrf(sd & "GiftAppMaker")
+Activity.Finish
+StartActivity(Me)
+End Sub
+
+Sub b_Click
+	StartActivity(Step1)
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub ad_Tick
+	If p.SdkVersion > 19 Then
+	If Interstitial.Status=Interstitial.Status_AdReadyToShow Then
+		Interstitial.Show
+		End If
+		If Interstitial.Status=Interstitial.Status_Dismissed Then
+			Interstitial.LoadAd
+	End If
+	End If
+End Sub
