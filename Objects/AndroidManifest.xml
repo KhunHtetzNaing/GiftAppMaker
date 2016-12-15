@@ -2,8 +2,8 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.htetznaing.giftappmaker"
-	android:versionCode="2"
-	android:versionName="1.1"
+	android:versionCode="3"
+	android:versionName="1.2"
 	android:installLocation="internalOnly">
 	
 	<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>
@@ -20,7 +20,7 @@
 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 	<application
 		android:icon="@drawable/icon"
-		android:label="Gift App Maker">
+		android:label="Gift App Maker (HBD Edition!)">
 		
 		<meta-data android:name="com.google.android.gms.version"
 		  android:value="@integer/google_play_services_version"/>
@@ -30,7 +30,7 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".main"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
@@ -42,49 +42,49 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".step1"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".step2"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".step3"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".step4"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".step5"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".preview"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".about"
-			android:label="Gift App Maker"
+			android:label="Gift App Maker (HBD Edition!)"
 			android:screenOrientation="unspecified">
 		</activity>
 		<service android:name=".starter">

@@ -74,23 +74,13 @@ Sub b1_Click
 End Sub
 
 Sub b_Click
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","img1.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","img2.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","img3.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","img4.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p1.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p2.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p3.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p4.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p5.bak")
-	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","birthday.bak")
 	ProgressDialogShow("Building Your Apk!" & CRLF & "Please Wait...")
 	T.Enabled = True
 	zs.Initialize
 End Sub
 
 Sub T_Tick
-    zip.ABZipDirectory(sd & "GiftAppMaker" , sd & "giftapp.apk") '--------------  project_hello ကို hello.apk ျဖစ္ေအာင္ ျပန္ပိတ္မယ္။ 
+    zip.ABZipDirectory(sd & ".GiftAppMaker" , sd & "giftapp.apk") '--------------  project_hello ကို hello.apk ျဖစ္ေအာင္ ျပန္ပိတ္မယ္။ 
 	zs.SignZip(sd & "giftapp.apk" , sd & "MyGiftApp.apk") '--------------- Sign လုပ္မယ္ New apk ကို hello_Output.apk အမည္နဲ႕ ထုတ္မယ္။
 	
        ml.rm(sd & "giftapp.apk") '---------------  sdcard ထဲ႕ hello.apk အေဟာင္းကို ဖ်က္မယ္။

@@ -24,9 +24,17 @@ Dim lb1,lb2 As Label
 Dim Banner As AdView
 Dim Interstitial As mwAdmobInterstitial
 Dim p As Phone
+Dim c1,c2,c3,c4,c5,c6 As ContentChooser
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
+	c1.Initialize("c1")
+	c2.Initialize("c2")
+	c3.Initialize("c3")
+	c4.Initialize("c4")
+	c5.Initialize("c5")
+	c6.Initialize("c6")
+	
 	p.SetScreenOrientation(1)
 	If p.SdkVersion > 19 Then
 		Banner.Initialize("Banner","ca-app-pub-4173348573252986/6151874158")
@@ -150,100 +158,75 @@ Sub iv4_Click
 End Sub
 
 Sub iv1_Click
-	
-Dim fd As FileDialog
-fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/img2.jpg",File.DirRootExternal & "/GiftAppMaker/assets/img2.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/assets","img2.jpg")
-chm1.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","img2.jpg")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/img2.bak",File.DirRootExternal & "/GiftAppMaker/assets/img2.jpg")
-		chm1.Visible = False
-	End If
+	c1.Show("image/*", "Choose image")
+End Sub
+
+Sub c1_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete( File.DirRootExternal & "/.GiftAppMaker/assets", "img2.jpg")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/assets", "img2.jpg")
+			 chm1.Visible = True
+    End If
 End Sub
 
 Sub iv2_Click
-Dim fd As FileDialog
-fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p1.jpg",File.DirRootExternal & "/GiftAppMaker/assets/p1.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/assets","p1.jpg")
-chm2.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p1.jpg")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p1.bak",File.DirRootExternal & "/GiftAppMaker/assets/p1.jpg")
-		chm2.Visible = False
-	End If
+	c2.Show("image/*", "Choose image")
+End Sub
+
+Sub c2_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete( File.DirRootExternal & "/.GiftAppMaker/assets", "p1.jpg")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/assets", "p1.jpg")
+			 chm2.Visible = True
+    End If
 End Sub
 
 Sub iv3_Click
-Dim fd As FileDialog
-fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p2.jpg",File.DirRootExternal & "/GiftAppMaker/assets/p2.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/assets","p2.jpg")
-chm3.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p2.jpg")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p2.bak",File.DirRootExternal & "/GiftAppMaker/assets/p2.jpg")
-		chm3.Visible = False
-	End If
+	c3.Show("image/*", "Choose image")
+End Sub
+
+Sub c3_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete( File.DirRootExternal & "/.GiftAppMaker/assets", "p2.jpg")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/assets", "p2.jpg")
+			 chm3.Visible = True
+    End If
 End Sub
 
 Sub iv5_Click
-Dim fd As FileDialog
-fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p3.jpg",File.DirRootExternal & "/GiftAppMaker/assets/p3.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/assets","p3.jpg")
-chm5.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p3.jpg")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p3.bak",File.DirRootExternal & "/GiftAppMaker/assets/p3.jpg")
-		chm3.Visible = False
-	End If
+	c4.Show("image/*", "Choose image")
+End Sub
+
+Sub c4_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete( File.DirRootExternal & "/.GiftAppMaker/assets", "p3.jpg")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/assets", "p3.jpg")
+			 chm5.Visible = True
+    End If
 End Sub
 
 Sub iv6_Click
-Dim fd As FileDialog
-fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p4.jpg",File.DirRootExternal & "/GiftAppMaker/assets/p4.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/assets","p4.jpg")
-chm6.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p4.jpg")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p4.bak",File.DirRootExternal & "/GiftAppMaker/assets/p4.jpg")
-			chm6.Visible = False
-	End If
+	c5.Show("image/*", "Choose image")
+End Sub
+
+Sub c5_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete( File.DirRootExternal & "/.GiftAppMaker/assets", "p4.jpg")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/assets", "p4.jpg")
+			 chm6.Visible = True
+    End If
 End Sub
 
 Sub iv7_Click
-Dim fd As FileDialog
-fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p5.jpg",File.DirRootExternal & "/GiftAppMaker/assets/p5.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/assets","p5.jpg")
-chm7.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p5.jpg")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/p5.bak",File.DirRootExternal & "/GiftAppMaker/assets/p5.jpg")
-			chm7.Visible = False
-	End If
+	c6.Show("image/*", "Choose image")
+End Sub
+
+Sub c6_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete( File.DirRootExternal & "/.GiftAppMaker/assets", "p5.jpg")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/assets", "p5.jpg")
+			 chm7.Visible = True
+    End If
 End Sub
 
 Sub Activity_Resume

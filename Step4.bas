@@ -32,9 +32,11 @@ Dim ml As MLfiles
 Dim Banner As AdView
 Dim Interstitial As mwAdmobInterstitial
 Dim p As Phone
+Dim c1 As ContentChooser
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
+	c1.Initialize("c1")
 		p.SetScreenOrientation(1)
 	If p.SdkVersion > 19 Then
 		Banner.Initialize("Banner","ca-app-pub-4173348573252986/6151874158")
@@ -66,25 +68,20 @@ chm1.Visible = False
 End Sub
 
 Sub iv1_Click
-	Dim fd As FileDialog
-	fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/birthday.mp3",File.DirRootExternal & "/GiftAppMaker/assets/birthday.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/assets","birthday.mp3")
-chm1.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","birthday.mp3")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/assets/birthday.bak",File.DirRootExternal & "/GiftAppMaker/assets/birthday.mp3")
-		chm1.Visible = False
-	End If
+	c1.Show("audio/*","Choose audio file")
+End Sub
 
+Sub c1_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete( File.DirRootExternal & "/.GiftAppMaker/assets", "birthday.mp3")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/assets", "birthday.mp3")
+			 chm1.Visible = True
+    End If
 End Sub
 
 Sub iv2_Click
 	If MediaPlayer1.IsPlaying = False Then
-	MediaPlayer1.Load(File.DirRootExternal & "/GiftAppMaker/assets","birthday.mp3")
+	MediaPlayer1.Load(File.DirRootExternal & "/.GiftAppMaker/assets","birthday.mp3")
 	MediaPlayer1.Play
 	timer1.Enabled = True
 	End If

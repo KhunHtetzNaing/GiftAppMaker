@@ -48,7 +48,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	bb.Text = "Create Apk"
 	Activity.AddView(bb,20%x,89%y,60%x,10%y)
 	
-		mbg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","love.png"))
+		mbg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","love.png"))
 		Activity.LoadLayout("menu")
 	fb.Background = mbg
 	fb.HideOffset = 100%y - fb.Top
@@ -63,18 +63,18 @@ Dim PhVol,MaxVol As Float
    MaxVol = pp.GetMaxVolume(pp.VOLUME_MUSIC) 
    pp.SetVolume(pp.VOLUME_MUSIC,MaxVol,False) 
 '1st
-img1bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","img1.png"))
+img1bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","img1.png"))
 img1.Initialize("img1")
 img1.Background = img1bg
 Activity.AddView(img1,1%x,0%y,98%x,10%y)
 
 mp.Initialize2("mp")
-mp.Load(File.DirRootExternal & "/GiftAppMaker/assets","birthday.mp3")
+mp.Load(File.DirRootExternal & "/.GiftAppMaker/assets","birthday.mp3")
 mp.Play
 
 Dim t As String
 'File.WriteString(File.DirRootExternal,"Example.txt","ယေန႔ ၁၃ ရက္ ၂ လ ၂၀၁၇ မွာက်ေရာက္တဲ့ ခြန္ထက္နိုင္ရဲ့  အသက္ ၁၇ ျပည့္ေမြးေန႔မွာ လိုရာဆႏၵအားလုံးျပည့္ဝနိုင္ပါေစ လို႔ ဆုမြန္ေကာင္း ေတာင္းေပးလိုက္ပါတယ္။")
-t = File.ReadString(File.DirRootExternal & "/GiftAppMaker/assets","bdw.txt")
+t = File.ReadString(File.DirRootExternal & "/.GiftAppMaker/assets","bdw.txt")
 tf = tf.LoadFromAssets("Myanmar.ttf")
 bw.Initialize("b2")
 bw.Typeface = tf
@@ -86,18 +86,18 @@ bdtext.Endable = True
 
 Activity.AddView(bw,1%x,(img1.Top+img1.Height),98%x,15%y)
 '2nd
-img2bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","img2.jpg"))
+img2bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","img2.jpg"))
 img2.Initialize("img2")
 img2.Background = img2bg
 Activity.AddView(img2,10%x,(img1.Top+img1.Height)+15%y,80%x,40%y)
 img1.Visible = False
 
 	'@@@@
-	p1bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","p1.jpg"))
-	p2bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","p2.jpg"))
-	p3bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","p3.jpg"))
-	p4bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","p4.jpg"))
-	p5bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","p5.jpg"))
+	p1bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","p1.jpg"))
+	p2bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","p2.jpg"))
+	p3bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","p3.jpg"))
+	p4bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","p4.jpg"))
+	p5bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","p5.jpg"))
 	
 	p1.Initialize("p1")
 	p1.Background = p1bg
@@ -125,14 +125,14 @@ img1.Visible = False
 	p5.Visible = False
 	
 '3rd
-img3bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","img3.png"))
+img3bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","img3.png"))
 img3.Initialize("img3")
 img3.Background = img3bg
 Activity.AddView(img3,5%x,(img2.Top+img2.Height) - 5%y,90%x,25%y)
 img3.Visible = False
 
 '4th
-img4bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","img4.png"))
+img4bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","img4.png"))
 img4.Initialize("img4")
 img4.Background = img4bg
 Activity.AddView(img4,1%x,(img2.Top+img2.Height) -5%y,98%x,35%y)
@@ -164,28 +164,28 @@ t4.Enabled = False
 '###########################################################################################################
 Activity.LoadLayout("lay1")
 'iBackgrounds
-i1bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i1.png"))
-i2bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i2.png"))
-i3bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i3.png"))
-i4bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i4.png"))
-i5bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i5.png"))
-i6bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i6.png"))
-i7bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i7.png"))
-i8bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i8.png"))
-i9bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i9.png"))
-i10bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i10.png"))
-i11bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i11.png"))
-i12bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i1.png"))
-i13bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i2.png"))
-i14bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i3.png"))
-i15bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i4.png"))
+i1bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i1.png"))
+i2bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i2.png"))
+i3bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i3.png"))
+i4bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i4.png"))
+i5bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i5.png"))
+i6bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i6.png"))
+i7bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i7.png"))
+i8bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i8.png"))
+i9bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i9.png"))
+i10bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i10.png"))
+i11bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i11.png"))
+i12bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i1.png"))
+i13bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i2.png"))
+i14bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i3.png"))
+i15bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i4.png"))
 
-b1bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i5.png"))
-b2bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i6.png"))
-b3bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i7.png"))
-b4bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i8.png"))
-b5bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i7.png"))
-b6bg.Initialize(LoadBitmap(File.DirRootExternal & "/GiftAppMaker/assets","i3.png"))
+b1bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i5.png"))
+b2bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i6.png"))
+b3bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i7.png"))
+b4bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i8.png"))
+b5bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i7.png"))
+b6bg.Initialize(LoadBitmap(File.DirRootExternal & "/.GiftAppMaker/assets","i3.png"))
 
 'i1
 i1.Background = i1bg

@@ -26,6 +26,7 @@ Dim zip As ABZipUnzip
 Dim Banner As AdView
 Dim Interstitial As mwAdmobInterstitial
 Dim p As Phone
+Dim cc As ContentChooser
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -108,52 +109,47 @@ Activity.AddView(b,15%x,(sp.Top+sp.Height)+5%x,170dip,57dip)
 Activity.AddView(iv2,70%x,(sp.Top+sp.Height)+2%y,75dip,65dip)
 
 chm1. Visible = False
-
+cc.Initialize("cc")
 End Sub
 
 Sub sp_ItemClick (Position As Int, Value As Object)
  Select Position
   Case 0
-  Case 1 : File.Copy(File.DirRootExternal & "/MyanmarFonts","Love.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-  Case 2 : File.Copy(File.DirRootExternal & "/MyanmarFonts","Heart.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-  Case 3 : File.Copy(File.DirRootExternal & "/MyanmarFonts","Flower.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-  	Case 4 : File.Copy(File.DirRootExternal & "/MyanmarFonts","BeikThaNo.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-		Case 5 : File.Copy(File.DirRootExternal & "/MyanmarFonts","Transformer.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-			Case 6 : File.Copy(File.DirRootExternal & "/MyanmarFonts","YoeYar.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-				Case 7 : File.Copy(File.DirRootExternal & "/MyanmarFonts","Chococooky.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-					Case 8 : File.Copy(File.DirRootExternal & "/MyanmarFonts","Matrix.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
-						Case 9 : File.Copy(File.DirRootExternal & "/MyanmarFonts","Metrix Smart.ttf",File.DirRootExternal & "/GiftAppMaker/assets","myanmar.ttf")
+  Case 1 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","Love.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+  Case 2 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","Heart.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+  Case 3 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","Flower.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+  	Case 4 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","BeikThaNo.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+		Case 5 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","Transformer.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+			Case 6 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","YoeYar.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+				Case 7 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","Chococooky.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+					Case 8 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","Matrix.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
+						Case 9 : File.Copy(File.DirRootExternal & "/.MyanmarFonts","Metrix Smart.ttf",File.DirRootExternal & "/.GiftAppMaker/assets","myanmar.ttf")
  End Select
 End Sub
 
 Sub iv1_Click
-	Dim ml As MLfiles
-Dim fd As FileDialog
-fd.FilePath = File.DirRootExternal
-fd.Show("Choose Your Image","Open","Reset","Cancel",Null)
-If fd.Response = DialogResponse.POSITIVE Then
-	ml.mv(File.DirRootExternal & "/GiftAppMaker/res/drawable/icon.png",File.DirRootExternal & "/GiftAppMaker/res/drawable/icon.bak")
-File.Copy(fd.FilePath,fd.ChosenName,File.DirRootExternal & "/GiftAppMaker/res/drawable","icon.png")
-chm1.Visible = True
-	End If
-	If fd.Response = DialogResponse.CANCEL Then
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/res/drawable","icon.png")
-		ml.mv(File.DirRootExternal & "/GiftAppMaker/res/drawable/icon.bak",File.DirRootExternal & "/GiftAppMaker/res/drawable/icon.png")
-		chm1.Visible = False
-	End If
+		cc.Show("image/*", "Choose image")
+End Sub
+
+Sub cc_Result (Success As Boolean, Dir As String, FileName As String)
+    If Success Then
+		File.Delete(File.DirRootExternal & "/.GiftAppMaker/res/drawable", "icon.png")
+             File.Copy(Dir, FileName, File.DirRootExternal & "/.GiftAppMaker/res/drawable", "icon.png")
+			 chm1.Visible = True
+    End If
 End Sub
 
 Sub iv2_Click
 		If ed.Text = "" Then
 		Else
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","bdw.txt")
-		File.WriteString(File.DirRootExternal & "/GiftAppMaker/assets","bdw.txt",ed.Text)
+		File.Delete(File.DirRootExternal & "/.GiftAppMaker/assets","bdw.txt")
+		File.WriteString(File.DirRootExternal & "/.GiftAppMaker/assets","bdw.txt",ed.Text)
 		End If
 		If edn.Text = "" Then
 			Else
 	Dim arg(3) As String
 	Dim pc As NNLPackageChanger
-	arg(0) = File.DirRootExternal & "/GiftAppMaker/AndroidManifest.xml"
+	arg(0) = File.DirRootExternal & "/.GiftAppMaker/AndroidManifest.xml"
 	arg(1) = "com.htetznaing.giftapp"
 	arg(2) = edn.Text
 	pc.Change(arg)
@@ -164,14 +160,14 @@ End Sub
 Sub b_Click
 		If ed.Text = "" Then
 		Else
-		File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","bdw.txt")
-		File.WriteString(File.DirRootExternal & "/GiftAppMaker/assets","bdw.txt",ed.Text)
+		File.Delete(File.DirRootExternal & "/.GiftAppMaker/assets","bdw.txt")
+		File.WriteString(File.DirRootExternal & "/.GiftAppMaker/assets","bdw.txt",ed.Text)
 		End If
 		If edn.Text = "" Then
 			Else
 	Dim arg(3) As String
 	Dim pc As NNLPackageChanger
-	arg(0) = File.DirRootExternal & "/GiftAppMaker/AndroidManifest.xml"
+	arg(0) = File.DirRootExternal & "/.GiftAppMaker/AndroidManifest.xml"
 	arg(1) = "com.htetznaing.giftapp"
 	arg(2) = edn.Text
 	pc.Change(arg)

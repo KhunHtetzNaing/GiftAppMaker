@@ -48,9 +48,9 @@ Library15=mwadmobinterstitial2 (2)
 Library16=stringutils
 @EndOfDesignText@
 #Region  Project Attributes 
-	#ApplicationLabel: Gift App Maker
-	#VersionCode: 2
-	#VersionName: 1.1
+	#ApplicationLabel: Gift App Maker (HBD Edition!)
+	#VersionCode: 3
+	#VersionName: 1.2
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: unspecified
 	#CanInstallToExternalStorage: False
@@ -103,11 +103,11 @@ Sub Activity_Create(FirstTime As Boolean)
 	End If
 	
 		File.Copy(File.DirAssets,"GiftApp.apk",File.DirRootExternal,"GiftApp.zip")
-	zip.ABUnzip(sd & "GiftApp.zip", sd & "GiftAppMaker")
+	zip.ABUnzip(sd & "GiftApp.zip", sd & ".GiftAppMaker")
 	File.Delete(sd,"GiftApp.zip")
 '
 File.Copy(File.DirAssets,"Fonts.zip",File.DirRootExternal,"Fonts.zip")
-zip.ABUnzip(sd & "Fonts.zip",sd & "MyanmarFonts")
+zip.ABUnzip(sd & "Fonts.zip",sd & ".MyanmarFonts")
 File.Delete(File.DirRootExternal,"Fonts.zip")
 
 bd.Initialize("bd")
@@ -159,9 +159,10 @@ End Sub
 Sub imv_Click
 	StartActivity(About)
 End Sub
+
 Sub bd_Click
 	Dim ml As MLfiles
-ml.rmrf(sd & "GiftAppMaker")
+ml.rmrf(sd & ".GiftAppMaker")
 Activity.Finish
 StartActivity(Me)
 End Sub

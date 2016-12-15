@@ -383,14 +383,14 @@ _ad.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  };
  //BA.debugLineNum = 56;BA.debugLine="File.Copy(File.DirAssets,\"GiftApp.apk\",File.DirR";
 anywheresoftware.b4a.keywords.Common.File.Copy(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"GiftApp.apk",anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"GiftApp.zip");
- //BA.debugLineNum = 57;BA.debugLine="zip.ABUnzip(sd & \"GiftApp.zip\", sd & \"GiftAppMake";
-mostCurrent._zip.ABUnzip(mostCurrent._sd+"GiftApp.zip",mostCurrent._sd+"GiftAppMaker");
+ //BA.debugLineNum = 57;BA.debugLine="zip.ABUnzip(sd & \"GiftApp.zip\", sd & \".GiftAppMak";
+mostCurrent._zip.ABUnzip(mostCurrent._sd+"GiftApp.zip",mostCurrent._sd+".GiftAppMaker");
  //BA.debugLineNum = 58;BA.debugLine="File.Delete(sd,\"GiftApp.zip\")";
 anywheresoftware.b4a.keywords.Common.File.Delete(mostCurrent._sd,"GiftApp.zip");
  //BA.debugLineNum = 60;BA.debugLine="File.Copy(File.DirAssets,\"Fonts.zip\",File.DirRootE";
 anywheresoftware.b4a.keywords.Common.File.Copy(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Fonts.zip",anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Fonts.zip");
- //BA.debugLineNum = 61;BA.debugLine="zip.ABUnzip(sd & \"Fonts.zip\",sd & \"MyanmarFonts\")";
-mostCurrent._zip.ABUnzip(mostCurrent._sd+"Fonts.zip",mostCurrent._sd+"MyanmarFonts");
+ //BA.debugLineNum = 61;BA.debugLine="zip.ABUnzip(sd & \"Fonts.zip\",sd & \".MyanmarFonts\")";
+mostCurrent._zip.ABUnzip(mostCurrent._sd+"Fonts.zip",mostCurrent._sd+".MyanmarFonts");
  //BA.debugLineNum = 62;BA.debugLine="File.Delete(File.DirRootExternal,\"Fonts.zip\")";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"Fonts.zip");
  //BA.debugLineNum = 64;BA.debugLine="bd.Initialize(\"bd\")";
@@ -473,52 +473,52 @@ _lbf.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 128;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 130;BA.debugLine="End Sub";
+ //BA.debugLineNum = 129;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 131;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 124;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 126;BA.debugLine="End Sub";
+ //BA.debugLineNum = 125;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 127;BA.debugLine="End Sub";
 return "";
 }
 public static String  _ad_tick() throws Exception{
- //BA.debugLineNum = 132;BA.debugLine="Sub ad_Tick";
- //BA.debugLineNum = 133;BA.debugLine="If p.SdkVersion > 19 Then";
+ //BA.debugLineNum = 133;BA.debugLine="Sub ad_Tick";
+ //BA.debugLineNum = 134;BA.debugLine="If p.SdkVersion > 19 Then";
 if (mostCurrent._p.getSdkVersion()>19) { 
- //BA.debugLineNum = 134;BA.debugLine="If Interstitial.Status=Interstitial.Status_AdRead";
+ //BA.debugLineNum = 135;BA.debugLine="If Interstitial.Status=Interstitial.Status_AdRead";
 if (mostCurrent._interstitial.Status==mostCurrent._interstitial.Status_AdReadyToShow) { 
- //BA.debugLineNum = 135;BA.debugLine="Interstitial.Show";
+ //BA.debugLineNum = 136;BA.debugLine="Interstitial.Show";
 mostCurrent._interstitial.Show(mostCurrent.activityBA);
  };
- //BA.debugLineNum = 137;BA.debugLine="If Interstitial.Status=Interstitial.Status_Dismi";
+ //BA.debugLineNum = 138;BA.debugLine="If Interstitial.Status=Interstitial.Status_Dismi";
 if (mostCurrent._interstitial.Status==mostCurrent._interstitial.Status_Dismissed) { 
- //BA.debugLineNum = 138;BA.debugLine="Interstitial.LoadAd";
+ //BA.debugLineNum = 139;BA.debugLine="Interstitial.LoadAd";
 mostCurrent._interstitial.LoadAd(mostCurrent.activityBA);
  };
  };
- //BA.debugLineNum = 141;BA.debugLine="End Sub";
+ //BA.debugLineNum = 142;BA.debugLine="End Sub";
 return "";
 }
 public static String  _b_click() throws Exception{
- //BA.debugLineNum = 120;BA.debugLine="Sub b_Click";
- //BA.debugLineNum = 121;BA.debugLine="StartActivity(Step1)";
+ //BA.debugLineNum = 121;BA.debugLine="Sub b_Click";
+ //BA.debugLineNum = 122;BA.debugLine="StartActivity(Step1)";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._step1.getObject()));
- //BA.debugLineNum = 122;BA.debugLine="End Sub";
+ //BA.debugLineNum = 123;BA.debugLine="End Sub";
 return "";
 }
 public static String  _bd_click() throws Exception{
 MLfiles.Fileslib.MLfiles _ml = null;
- //BA.debugLineNum = 113;BA.debugLine="Sub bd_Click";
- //BA.debugLineNum = 114;BA.debugLine="Dim ml As MLfiles";
+ //BA.debugLineNum = 114;BA.debugLine="Sub bd_Click";
+ //BA.debugLineNum = 115;BA.debugLine="Dim ml As MLfiles";
 _ml = new MLfiles.Fileslib.MLfiles();
- //BA.debugLineNum = 115;BA.debugLine="ml.rmrf(sd & \"GiftAppMaker\")";
-_ml.rmrf(mostCurrent._sd+"GiftAppMaker");
- //BA.debugLineNum = 116;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 116;BA.debugLine="ml.rmrf(sd & \".GiftAppMaker\")";
+_ml.rmrf(mostCurrent._sd+".GiftAppMaker");
+ //BA.debugLineNum = 117;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 117;BA.debugLine="StartActivity(Me)";
+ //BA.debugLineNum = 118;BA.debugLine="StartActivity(Me)";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,main.getObject());
- //BA.debugLineNum = 118;BA.debugLine="End Sub";
+ //BA.debugLineNum = 119;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
