@@ -452,8 +452,8 @@ public com.htetznaing.giftappmaker.step2 _step2 = null;
 public com.htetznaing.giftappmaker.step3 _step3 = null;
 public com.htetznaing.giftappmaker.step4 _step4 = null;
 public com.htetznaing.giftappmaker.step5 _step5 = null;
-public com.htetznaing.giftappmaker.starter _starter = null;
 public com.htetznaing.giftappmaker.about _about = null;
+public com.htetznaing.giftappmaker.starter _starter = null;
 
 public static void initializeProcessGlobals() {
              try {

@@ -336,14 +336,15 @@ public MLfiles.Fileslib.MLfiles _ml = null;
 public anywheresoftware.b4a.admobwrapper.AdViewWrapper _banner = null;
 public mobi.mindware.admob.interstitial.AdmobInterstitialsAds _interstitial = null;
 public anywheresoftware.b4a.phone.Phone _p = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _iv1 = null;
 public com.htetznaing.giftappmaker.main _main = null;
 public com.htetznaing.giftappmaker.step1 _step1 = null;
 public com.htetznaing.giftappmaker.step2 _step2 = null;
 public com.htetznaing.giftappmaker.step3 _step3 = null;
 public com.htetznaing.giftappmaker.step4 _step4 = null;
 public com.htetznaing.giftappmaker.preview _preview = null;
-public com.htetznaing.giftappmaker.starter _starter = null;
 public com.htetznaing.giftappmaker.about _about = null;
+public com.htetznaing.giftappmaker.starter _starter = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -354,133 +355,133 @@ public static void initializeProcessGlobals() {
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
 anywheresoftware.b4a.objects.LabelWrapper _lbf = null;
- //BA.debugLineNum = 29;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 30;BA.debugLine="p.SetScreenOrientation(1)";
+ //BA.debugLineNum = 30;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 31;BA.debugLine="p.SetScreenOrientation(1)";
 mostCurrent._p.SetScreenOrientation(processBA,(int) (1));
- //BA.debugLineNum = 31;BA.debugLine="If p.SdkVersion > 19 Then";
+ //BA.debugLineNum = 32;BA.debugLine="If p.SdkVersion > 19 Then";
 if (mostCurrent._p.getSdkVersion()>19) { 
- //BA.debugLineNum = 32;BA.debugLine="Banner.Initialize(\"Banner\",\"ca-app-pub-417334857";
+ //BA.debugLineNum = 33;BA.debugLine="Banner.Initialize(\"Banner\",\"ca-app-pub-417334857";
 mostCurrent._banner.Initialize(mostCurrent.activityBA,"Banner","ca-app-pub-4173348573252986/6151874158");
- //BA.debugLineNum = 33;BA.debugLine="Banner.LoadAd";
+ //BA.debugLineNum = 34;BA.debugLine="Banner.LoadAd";
 mostCurrent._banner.LoadAd();
- //BA.debugLineNum = 34;BA.debugLine="Activity.AddView(Banner,0%x,90%y,100%x,10%y)";
+ //BA.debugLineNum = 35;BA.debugLine="Activity.AddView(Banner,0%x,90%y,100%x,10%y)";
 mostCurrent._activity.AddView((android.view.View)(mostCurrent._banner.getObject()),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (90),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (10),mostCurrent.activityBA));
- //BA.debugLineNum = 36;BA.debugLine="Interstitial.Initialize(\"Interstitial\",\"ca-app-p";
+ //BA.debugLineNum = 37;BA.debugLine="Interstitial.Initialize(\"Interstitial\",\"ca-app-p";
 mostCurrent._interstitial.Initialize(mostCurrent.activityBA,"Interstitial","ca-app-pub-4173348573252986/7628607354");
- //BA.debugLineNum = 37;BA.debugLine="Interstitial.LoadAd";
+ //BA.debugLineNum = 38;BA.debugLine="Interstitial.LoadAd";
 mostCurrent._interstitial.LoadAd(mostCurrent.activityBA);
- //BA.debugLineNum = 38;BA.debugLine="ad.Initialize(\"ad\",30000)";
+ //BA.debugLineNum = 39;BA.debugLine="ad.Initialize(\"ad\",30000)";
 _ad.Initialize(processBA,"ad",(long) (30000));
- //BA.debugLineNum = 39;BA.debugLine="ad.Enabled = True";
+ //BA.debugLineNum = 40;BA.debugLine="ad.Enabled = True";
 _ad.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 42;BA.debugLine="sd =  File.DirRootExternal & \"/\"";
+ //BA.debugLineNum = 43;BA.debugLine="sd =  File.DirRootExternal & \"/\"";
 mostCurrent._sd = anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/";
- //BA.debugLineNum = 43;BA.debugLine="abg.Initialize(Colors.RGB(255,10,144),1)";
+ //BA.debugLineNum = 44;BA.debugLine="abg.Initialize(Colors.RGB(255,10,144),1)";
 mostCurrent._abg.Initialize(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (255),(int) (10),(int) (144)),(int) (1));
- //BA.debugLineNum = 44;BA.debugLine="Activity.Background = abg";
+ //BA.debugLineNum = 45;BA.debugLine="Activity.Background = abg";
 mostCurrent._activity.setBackground((android.graphics.drawable.Drawable)(mostCurrent._abg.getObject()));
- //BA.debugLineNum = 45;BA.debugLine="Activity.LoadLayout(\"FinalStep\")";
+ //BA.debugLineNum = 46;BA.debugLine="Activity.LoadLayout(\"FinalStep\")";
 mostCurrent._activity.LoadLayout("FinalStep",mostCurrent.activityBA);
- //BA.debugLineNum = 47;BA.debugLine="lb1.Textsize = 30";
+ //BA.debugLineNum = 48;BA.debugLine="lb1.Textsize = 30";
 mostCurrent._lb1.setTextSize((float) (30));
- //BA.debugLineNum = 48;BA.debugLine="lb1.TextColor = Colors.Black";
+ //BA.debugLineNum = 49;BA.debugLine="lb1.TextColor = Colors.Black";
 mostCurrent._lb1.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
- //BA.debugLineNum = 49;BA.debugLine="lb1.Typeface = Typeface.DEFAULT_BOLD";
+ //BA.debugLineNum = 50;BA.debugLine="lb1.Typeface = Typeface.DEFAULT_BOLD";
 mostCurrent._lb1.setTypeface(anywheresoftware.b4a.keywords.Common.Typeface.DEFAULT_BOLD);
- //BA.debugLineNum = 50;BA.debugLine="lb1.Gravity = Gravity.CENTER";
+ //BA.debugLineNum = 51;BA.debugLine="lb1.Gravity = Gravity.CENTER";
 mostCurrent._lb1.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER);
- //BA.debugLineNum = 51;BA.debugLine="lb2.Text = \"Build Your Android App Now!\"";
+ //BA.debugLineNum = 52;BA.debugLine="lb2.Text = \"Build Your Android App Now!\"";
 mostCurrent._lb2.setText((Object)("Build Your Android App Now!"));
- //BA.debugLineNum = 52;BA.debugLine="lb2.TextSize = 20";
+ //BA.debugLineNum = 53;BA.debugLine="lb2.TextSize = 20";
 mostCurrent._lb2.setTextSize((float) (20));
- //BA.debugLineNum = 53;BA.debugLine="lb2.TextColor = Colors.White";
+ //BA.debugLineNum = 54;BA.debugLine="lb2.TextColor = Colors.White";
 mostCurrent._lb2.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
- //BA.debugLineNum = 54;BA.debugLine="lb2.Gravity = Gravity.CENTER";
+ //BA.debugLineNum = 55;BA.debugLine="lb2.Gravity = Gravity.CENTER";
 mostCurrent._lb2.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER);
- //BA.debugLineNum = 55;BA.debugLine="T.Initialize(\"T\",1000)";
+ //BA.debugLineNum = 56;BA.debugLine="T.Initialize(\"T\",1000)";
 _t.Initialize(processBA,"T",(long) (1000));
- //BA.debugLineNum = 56;BA.debugLine="T.Enabled = False";
+ //BA.debugLineNum = 57;BA.debugLine="T.Enabled = False";
 _t.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 58;BA.debugLine="Dim lbf As Label";
+ //BA.debugLineNum = 59;BA.debugLine="Dim lbf As Label";
 _lbf = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 59;BA.debugLine="lbf.Initialize(\"lbf\")";
+ //BA.debugLineNum = 60;BA.debugLine="lbf.Initialize(\"lbf\")";
 _lbf.Initialize(mostCurrent.activityBA,"lbf");
- //BA.debugLineNum = 60;BA.debugLine="lbf.Text = \"Developed By Khun Htetz Naing\"";
+ //BA.debugLineNum = 61;BA.debugLine="lbf.Text = \"Developed By Khun Htetz Naing\"";
 _lbf.setText((Object)("Developed By Khun Htetz Naing"));
- //BA.debugLineNum = 61;BA.debugLine="Activity.AddView(lbf,0%x,85%y,100%x,5%y)";
+ //BA.debugLineNum = 62;BA.debugLine="Activity.AddView(lbf,0%x,85%y,100%x,5%y)";
 mostCurrent._activity.AddView((android.view.View)(_lbf.getObject()),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (85),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA));
- //BA.debugLineNum = 62;BA.debugLine="lbf.Gravity = Gravity.CENTER";
+ //BA.debugLineNum = 63;BA.debugLine="lbf.Gravity = Gravity.CENTER";
 _lbf.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER);
- //BA.debugLineNum = 63;BA.debugLine="lbf.TextColor = Colors.White";
+ //BA.debugLineNum = 64;BA.debugLine="lbf.TextColor = Colors.White";
 _lbf.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
- //BA.debugLineNum = 64;BA.debugLine="End Sub";
+ //BA.debugLineNum = 65;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 110;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 112;BA.debugLine="End Sub";
+ //BA.debugLineNum = 111;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 113;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 106;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 108;BA.debugLine="End Sub";
+ //BA.debugLineNum = 107;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 109;BA.debugLine="End Sub";
 return "";
 }
 public static String  _ad_tick() throws Exception{
- //BA.debugLineNum = 114;BA.debugLine="Sub ad_Tick";
- //BA.debugLineNum = 115;BA.debugLine="If p.SdkVersion > 19 Then";
+ //BA.debugLineNum = 115;BA.debugLine="Sub ad_Tick";
+ //BA.debugLineNum = 116;BA.debugLine="If p.SdkVersion > 19 Then";
 if (mostCurrent._p.getSdkVersion()>19) { 
- //BA.debugLineNum = 116;BA.debugLine="If Interstitial.Status=Interstitial.Status_AdRead";
+ //BA.debugLineNum = 117;BA.debugLine="If Interstitial.Status=Interstitial.Status_AdRead";
 if (mostCurrent._interstitial.Status==mostCurrent._interstitial.Status_AdReadyToShow) { 
- //BA.debugLineNum = 117;BA.debugLine="Interstitial.Show";
+ //BA.debugLineNum = 118;BA.debugLine="Interstitial.Show";
 mostCurrent._interstitial.Show(mostCurrent.activityBA);
  };
- //BA.debugLineNum = 119;BA.debugLine="If Interstitial.Status=Interstitial.Status_Dismi";
+ //BA.debugLineNum = 120;BA.debugLine="If Interstitial.Status=Interstitial.Status_Dismi";
 if (mostCurrent._interstitial.Status==mostCurrent._interstitial.Status_Dismissed) { 
- //BA.debugLineNum = 120;BA.debugLine="Interstitial.LoadAd";
+ //BA.debugLineNum = 121;BA.debugLine="Interstitial.LoadAd";
 mostCurrent._interstitial.LoadAd(mostCurrent.activityBA);
  };
  };
- //BA.debugLineNum = 123;BA.debugLine="End Sub";
+ //BA.debugLineNum = 124;BA.debugLine="End Sub";
 return "";
 }
 public static String  _b_click() throws Exception{
- //BA.debugLineNum = 70;BA.debugLine="Sub b_Click";
- //BA.debugLineNum = 71;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img1.bak");
+ //BA.debugLineNum = 71;BA.debugLine="Sub b_Click";
  //BA.debugLineNum = 72;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img2.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img1.bak");
  //BA.debugLineNum = 73;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img3.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img2.bak");
  //BA.debugLineNum = 74;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img4.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img3.bak");
  //BA.debugLineNum = 75;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p1.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","img4.bak");
  //BA.debugLineNum = 76;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p2.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p1.bak");
  //BA.debugLineNum = 77;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p3.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p2.bak");
  //BA.debugLineNum = 78;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p4.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p3.bak");
  //BA.debugLineNum = 79;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
-anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p5.bak");
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p4.bak");
  //BA.debugLineNum = 80;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
+anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","p5.bak");
+ //BA.debugLineNum = 81;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMaker";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","birthday.bak");
- //BA.debugLineNum = 81;BA.debugLine="ProgressDialogShow(\"Building Your Apk! Please Wai";
-anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,"Building Your Apk! Please Wait...");
- //BA.debugLineNum = 82;BA.debugLine="T.Enabled = True";
+ //BA.debugLineNum = 82;BA.debugLine="ProgressDialogShow(\"Building Your Apk!\" & CRLF &";
+anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,"Building Your Apk!"+anywheresoftware.b4a.keywords.Common.CRLF+"Please Wait...");
+ //BA.debugLineNum = 83;BA.debugLine="T.Enabled = True";
 _t.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 83;BA.debugLine="zs.Initialize";
+ //BA.debugLineNum = 84;BA.debugLine="zs.Initialize";
 mostCurrent._zs.Initialize(processBA);
- //BA.debugLineNum = 84;BA.debugLine="End Sub";
+ //BA.debugLineNum = 85;BA.debugLine="End Sub";
 return "";
 }
 public static String  _b1_click() throws Exception{
- //BA.debugLineNum = 66;BA.debugLine="Sub b1_Click";
- //BA.debugLineNum = 67;BA.debugLine="StartActivity(Preview)";
+ //BA.debugLineNum = 67;BA.debugLine="Sub b1_Click";
+ //BA.debugLineNum = 68;BA.debugLine="StartActivity(Preview)";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._preview.getObject()));
- //BA.debugLineNum = 68;BA.debugLine="End Sub";
+ //BA.debugLineNum = 69;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -507,7 +508,9 @@ mostCurrent._banner = new anywheresoftware.b4a.admobwrapper.AdViewWrapper();
 mostCurrent._interstitial = new mobi.mindware.admob.interstitial.AdmobInterstitialsAds();
  //BA.debugLineNum = 26;BA.debugLine="Dim p As Phone";
 mostCurrent._p = new anywheresoftware.b4a.phone.Phone();
- //BA.debugLineNum = 27;BA.debugLine="End Sub";
+ //BA.debugLineNum = 27;BA.debugLine="Dim iv1 As ImageView";
+mostCurrent._iv1 = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 28;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -521,34 +524,34 @@ return "";
 }
 public static String  _t_tick() throws Exception{
 anywheresoftware.b4a.objects.IntentWrapper _in = null;
- //BA.debugLineNum = 86;BA.debugLine="Sub T_Tick";
- //BA.debugLineNum = 87;BA.debugLine="zip.ABZipDirectory(sd & \"GiftAppMaker\" , sd &";
+ //BA.debugLineNum = 87;BA.debugLine="Sub T_Tick";
+ //BA.debugLineNum = 88;BA.debugLine="zip.ABZipDirectory(sd & \"GiftAppMaker\" , sd &";
 mostCurrent._zip.ABZipDirectory(mostCurrent._sd+"GiftAppMaker",mostCurrent._sd+"giftapp.apk");
- //BA.debugLineNum = 88;BA.debugLine="zs.SignZip(sd & \"giftapp.apk\" , sd & \"MyGiftApp.a";
+ //BA.debugLineNum = 89;BA.debugLine="zs.SignZip(sd & \"giftapp.apk\" , sd & \"MyGiftApp.a";
 mostCurrent._zs.SignZip(mostCurrent._sd+"giftapp.apk",mostCurrent._sd+"MyGiftApp.apk");
- //BA.debugLineNum = 90;BA.debugLine="ml.rm(sd & \"giftapp.apk\") '---------------";
+ //BA.debugLineNum = 91;BA.debugLine="ml.rm(sd & \"giftapp.apk\") '---------------";
 mostCurrent._ml.rm(mostCurrent._sd+"giftapp.apk");
- //BA.debugLineNum = 92;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 93;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 93;BA.debugLine="ToastMessageShow (\"Successfully Created";
+ //BA.debugLineNum = 94;BA.debugLine="ToastMessageShow (\"Successfully Created";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow("Successfully Created "+anywheresoftware.b4a.keywords.Common.CRLF+"MyGiftApp.apk in SdCard!",anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 94;BA.debugLine="T.Enabled = False";
+ //BA.debugLineNum = 95;BA.debugLine="T.Enabled = False";
 _t.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 95;BA.debugLine="Dim in As Intent";
+ //BA.debugLineNum = 96;BA.debugLine="Dim in As Intent";
 _in = new anywheresoftware.b4a.objects.IntentWrapper();
- //BA.debugLineNum = 96;BA.debugLine="in.Initialize(in.ACTION_VIEW,\"file:///\"&sd & \"MyGi";
+ //BA.debugLineNum = 97;BA.debugLine="in.Initialize(in.ACTION_VIEW,\"file:///\"&sd & \"MyGi";
 _in.Initialize(_in.ACTION_VIEW,"file:///"+mostCurrent._sd+"MyGiftApp.apk");
- //BA.debugLineNum = 97;BA.debugLine="in.SetType(\"application/vnd.android.package-archiv";
+ //BA.debugLineNum = 98;BA.debugLine="in.SetType(\"application/vnd.android.package-archiv";
 _in.SetType("application/vnd.android.package-archive");
- //BA.debugLineNum = 98;BA.debugLine="If in.IsInitialized Then";
+ //BA.debugLineNum = 99;BA.debugLine="If in.IsInitialized Then";
 if (_in.IsInitialized()) { 
- //BA.debugLineNum = 99;BA.debugLine="StartActivity(in)";
+ //BA.debugLineNum = 100;BA.debugLine="StartActivity(in)";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(_in.getObject()));
  }else {
- //BA.debugLineNum = 101;BA.debugLine="Msgbox(\"Please Restart Project\",\"Attention!\")";
+ //BA.debugLineNum = 102;BA.debugLine="Msgbox(\"Please Restart Project\",\"Attention!\")";
 anywheresoftware.b4a.keywords.Common.Msgbox("Please Restart Project","Attention!",mostCurrent.activityBA);
  };
- //BA.debugLineNum = 103;BA.debugLine="End Sub";
+ //BA.debugLineNum = 104;BA.debugLine="End Sub";
 return "";
 }
 }

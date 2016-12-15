@@ -2,8 +2,8 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.htetznaing.giftappmaker"
-	android:versionCode="1"
-	android:versionName="1.0"
+	android:versionCode="2"
+	android:versionName="1.1"
 	android:installLocation="internalOnly">
 	
 	<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>
@@ -80,10 +80,6 @@
 			android:label="Gift App Maker"
 			android:screenOrientation="unspecified">
 		</activity>
-		<service android:name=".starter">
-		</service>
-		<receiver android:name=".starter$starter_BR">
-		</receiver>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
@@ -91,5 +87,9 @@
 			android:label="Gift App Maker"
 			android:screenOrientation="unspecified">
 		</activity>
+		<service android:name=".starter">
+		</service>
+		<receiver android:name=".starter$starter_BR">
+		</receiver>
 	</application>
 </manifest>

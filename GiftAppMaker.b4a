@@ -6,12 +6,12 @@ Module3=Step3
 Module4=Step4
 Module5=Step5
 Module6=Preview
-Module7=Starter
-Module8=About
+Module7=About
+Module8=Starter
 Build1=Default,com.htetznaing.giftappmaker
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />~\n~<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~'AdMob~\n~AddApplicationText(~\n~<meta-data android:name="com.google.android.gms.version"~\n~  android:value="@integer/google_play_services_version"/>~\n~<activity android:name="com.google.android.gms.ads.AdActivity"~\n~  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>~\n~~\n~)~\n~'End of AdMob
 IconFile=
-NumberOfFiles=20
+NumberOfFiles=17
 File1=checkmark.png
 File2=chooseimage.png
 File3=FinalStep.bal
@@ -20,18 +20,15 @@ File5=GiftApp.apk
 File6=icon.png
 File7=imv.png
 File8=imv1.png
-File9=l1.bal
-File10=l2.bal
-File11=l3.bal
-File12=l4.bal
-File13=lay1.bal
-File14=love.png
-File15=menu.bal
-File16=mp3.png
-File17=myanmar.ttf
-File18=pause.png
-File19=play.png
-File20=save.png
+File9=l4.bal
+File10=lay1.bal
+File11=love.png
+File12=menu.bal
+File13=mp3.png
+File14=myanmar.ttf
+File15=pause.png
+File16=play.png
+File17=save.png
 NumberOfLibraries=16
 Library1=core
 Library2=abzipunzip
@@ -52,8 +49,8 @@ Library16=stringutils
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: Gift App Maker
-	#VersionCode: 1
-	#VersionName: 1.0
+	#VersionCode: 2
+	#VersionName: 1.1
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: unspecified
 	#CanInstallToExternalStorage: False
@@ -136,27 +133,27 @@ Activity.AddView(bar,5%x,(l1.Top+l1.Height),90%x,0.5%y)
 	anit.initialize("",Me,300)
 	anit.Run("Make Easily your Own" &CRLF & "Birthday Wish App for" & CRLF & "Your Dear!",lb)
 	anit.Endable = True
-	Activity.AddView(lb,10%x,10%y,80%x,20%y)
+	Activity.AddView(lb,10%x,(bar.Top+bar.Height),80%x,15%y)
+	Activity.AddView(bd,10%x,(lb.Top+lb.Height)+1%y,50%x,10%y)
 	
 	abg.Initialize(Colors.RGB(255,10,144),1)
 	Activity.Background = abg
 ibg.Initialize(LoadBitmap(File.DirAssets,"imv.png"))
 imv.Initialize("imv")
 imv.Background = ibg
- Activity.AddView(imv,20%x,40%y,200dip,200dip)
+ Activity.AddView(imv,20%x,(bd.Top+bd.Height),200dip,200dip)
  
  b.Initialize("b")
  b.Text = ">> Start >>"
- Activity.AddView(b,50%x,75%y,45%x,10%y)
+ Activity.AddView(b,50%x,(imv.Top+imv.Height)+1%y,45%x,10%y)
  
  Dim lbf As Label
  lbf.Initialize("lbf")
  lbf.Text = "Developed By Khun Htetz Naing"
- Activity.AddView(lbf,0%x,85%y,100%x,5%y)
+ Activity.AddView(lbf,0%x,(b.Top+b.Height),100%x,5%y)
  lbf.Gravity = Gravity.CENTER
  lbf.TextColor = Colors.White
 
-		Activity.AddView(bd,10%x,30%y,50%x,10%y)
 End Sub
 
 Sub imv_Click

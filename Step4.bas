@@ -63,13 +63,6 @@ lb2.TextColor = Colors.White
 lb2.Gravity = Gravity.CENTER
 
 chm1.Visible = False
-
- Dim lbf As Label
- lbf.Initialize("lbf")
- lbf.Text = "Developed By Khun Htetz Naing"
- Activity.AddView(lbf,0%x,85%y,100%x,5%y)
- lbf.Gravity = Gravity.CENTER
- lbf.TextColor = Colors.White
 End Sub
 
 Sub iv1_Click

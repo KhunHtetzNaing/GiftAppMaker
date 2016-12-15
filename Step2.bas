@@ -39,33 +39,75 @@ Sub Activity_Create(FirstTime As Boolean)
 		ad.Enabled = True
 	End If
 	
-	Activity.LoadLayout("l2")
 		abg.Initialize(Colors.RGB(255,10,144),1)
 	Activity.Background = abg
 
-lb1.Text = "Step 2"
+
+lb1.Initialize("")
+lb1.Text = "Step 1"
 lb1.Textsize = 30
 lb1.TextColor = Colors.Black
 lb1.Typeface = Typeface.DEFAULT_BOLD
 lb1.Gravity = Gravity.CENTER
+Activity.AddView(lb1,0%x,1%y,100%x,7%y)
 
-lb2.Text = "Choose Your Image Or Next"
+lb2.Initialize("")
+lb2.Text =  "Choose Your Image Or Next"
 lb2.TextSize = 20
 lb2.TextColor = Colors.White
 lb2.Gravity = Gravity.CENTER
+Activity.AddView(lb2,0%x,(lb1.Top+lb1.Height),100%x,5%y)
 
-b.Text = "Preview"
+'Imv1
+iv1.Initialize("iv1")
+iv1.Bitmap = LoadBitmap(File.DirAssets,"chooseimage.png")
+iv1.Gravity = Gravity.FILL
+Activity.AddView(iv1,30%x,(lb2.Top+lb2.Height)+2%y,80dip,80dip)
+
+chm1.Initialize("chm1")
+chm1.Bitmap = LoadBitmap(File.DirAssets,"checkmark.png")
+chm1.Gravity = Gravity.FILL
+Activity.AddView(chm1,(iv1.Width+iv1.Top)+5%x,(lb2.Top+lb2.Height)+4%y,45dip,40dip)
+
+'Imv2
+iv2.Initialize("iv2")
+iv2.Bitmap = LoadBitmap(File.DirAssets,"chooseimage.png")
+iv2.Gravity = Gravity.FILL
+Activity.AddView(iv2,30%x,(iv1.Top+iv1.Height)+2%y,80dip,80dip)
+
+chm2.Initialize("chm2")
+chm2.Bitmap = LoadBitmap(File.DirAssets,"checkmark.png")
+chm2.Gravity = Gravity.FILL
+Activity.AddView(chm2,(iv1.Width+iv1.Top)+5%x,(iv1.Top+iv1.Height)+4%y,45dip,40dip)
+
+'Imv3
+iv3.Initialize("iv3")
+iv3.Bitmap = LoadBitmap(File.DirAssets,"chooseimage.png")
+iv3.Gravity = Gravity.FILL
+Activity.AddView(iv3,30%x,(iv2.Top+iv2.Height)+2%y,80dip,80dip)
+
+chm3.Initialize("chm3")
+chm3.Bitmap = LoadBitmap(File.DirAssets,"checkmark.png")
+chm3.Gravity = Gravity.FILL
+Activity.AddView(chm3,(iv1.Width+iv1.Top)+5%x,(iv2.Top+iv2.Height)+4%y,45dip,40dip)
 
 chm1.Visible = False
 chm2.Visible = False
 chm3.Visible = False
+'Iv4
+iv4.Initialize("iv4")
+iv4.Bitmap = LoadBitmap(File.DirAssets,"save.png")
+iv4.Gravity = Gravity.FILL
+Activity.AddView(iv4,70%x,(iv3.Top+iv3.Height)+2%y,75dip,65dip)
 
- Dim lbf As Label
- lbf.Initialize("lbf")
- lbf.Text = "Developed By Khun Htetz Naing"
- Activity.AddView(lbf,0%x,85%y,100%x,5%y)
- lbf.Gravity = Gravity.CENTER
- lbf.TextColor = Colors.White
+b.Initialize("b")
+b.Text = "Preview"
+Activity.AddView(b,15%x,(iv3.Top+iv3.Height)+5%y,170dip,57dip)
+
+chm1.Visible = False
+chm2.Visible = False
+chm3.Visible = False
+ 
  
 End Sub
 

@@ -347,8 +347,8 @@ public com.htetznaing.giftappmaker.step2 _step2 = null;
 public com.htetznaing.giftappmaker.step3 _step3 = null;
 public com.htetznaing.giftappmaker.step5 _step5 = null;
 public com.htetznaing.giftappmaker.preview _preview = null;
-public com.htetznaing.giftappmaker.starter _starter = null;
 public com.htetznaing.giftappmaker.about _about = null;
+public com.htetznaing.giftappmaker.starter _starter = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -358,7 +358,6 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
-anywheresoftware.b4a.objects.LabelWrapper _lbf = null;
  //BA.debugLineNum = 32;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
  //BA.debugLineNum = 33;BA.debugLine="p.SetScreenOrientation(1)";
 mostCurrent._p.SetScreenOrientation(processBA,(int) (1));
@@ -409,96 +408,84 @@ mostCurrent._lb2.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White)
 mostCurrent._lb2.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER);
  //BA.debugLineNum = 60;BA.debugLine="chm1.Visible = False";
 mostCurrent._chm1.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 62;BA.debugLine="Dim lbf As Label";
-_lbf = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 63;BA.debugLine="lbf.Initialize(\"lbf\")";
-_lbf.Initialize(mostCurrent.activityBA,"lbf");
- //BA.debugLineNum = 64;BA.debugLine="lbf.Text = \"Developed By Khun Htetz Naing\"";
-_lbf.setText((Object)("Developed By Khun Htetz Naing"));
- //BA.debugLineNum = 65;BA.debugLine="Activity.AddView(lbf,0%x,85%y,100%x,5%y)";
-mostCurrent._activity.AddView((android.view.View)(_lbf.getObject()),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (85),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA));
- //BA.debugLineNum = 66;BA.debugLine="lbf.Gravity = Gravity.CENTER";
-_lbf.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER);
- //BA.debugLineNum = 67;BA.debugLine="lbf.TextColor = Colors.White";
-_lbf.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
- //BA.debugLineNum = 68;BA.debugLine="End Sub";
+ //BA.debugLineNum = 61;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 109;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
+ //BA.debugLineNum = 102;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 104;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 105;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 107;BA.debugLine="End Sub";
+ //BA.debugLineNum = 98;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 100;BA.debugLine="End Sub";
 return "";
 }
 public static String  _ad_tick() throws Exception{
- //BA.debugLineNum = 146;BA.debugLine="Sub ad_Tick";
- //BA.debugLineNum = 147;BA.debugLine="If p.SdkVersion > 19 Then";
+ //BA.debugLineNum = 139;BA.debugLine="Sub ad_Tick";
+ //BA.debugLineNum = 140;BA.debugLine="If p.SdkVersion > 19 Then";
 if (mostCurrent._p.getSdkVersion()>19) { 
- //BA.debugLineNum = 148;BA.debugLine="If Interstitial.Status=Interstitial.Status_AdRead";
+ //BA.debugLineNum = 141;BA.debugLine="If Interstitial.Status=Interstitial.Status_AdRead";
 if (mostCurrent._interstitial.Status==mostCurrent._interstitial.Status_AdReadyToShow) { 
- //BA.debugLineNum = 149;BA.debugLine="Interstitial.Show";
+ //BA.debugLineNum = 142;BA.debugLine="Interstitial.Show";
 mostCurrent._interstitial.Show(mostCurrent.activityBA);
  };
- //BA.debugLineNum = 151;BA.debugLine="If Interstitial.Status=Interstitial.Status_Dismi";
+ //BA.debugLineNum = 144;BA.debugLine="If Interstitial.Status=Interstitial.Status_Dismi";
 if (mostCurrent._interstitial.Status==mostCurrent._interstitial.Status_Dismissed) { 
- //BA.debugLineNum = 152;BA.debugLine="Interstitial.LoadAd";
+ //BA.debugLineNum = 145;BA.debugLine="Interstitial.LoadAd";
 mostCurrent._interstitial.LoadAd(mostCurrent.activityBA);
  };
  };
- //BA.debugLineNum = 155;BA.debugLine="End Sub";
+ //BA.debugLineNum = 148;BA.debugLine="End Sub";
 return "";
 }
 public static String  _b_click() throws Exception{
- //BA.debugLineNum = 142;BA.debugLine="Sub b_Click";
- //BA.debugLineNum = 143;BA.debugLine="StartActivity(Preview)";
+ //BA.debugLineNum = 135;BA.debugLine="Sub b_Click";
+ //BA.debugLineNum = 136;BA.debugLine="StartActivity(Preview)";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._preview.getObject()));
- //BA.debugLineNum = 144;BA.debugLine="End Sub";
+ //BA.debugLineNum = 137;BA.debugLine="End Sub";
 return "";
 }
 public static String  _barposition_valuechanged(int _value,boolean _userchanged) throws Exception{
- //BA.debugLineNum = 133;BA.debugLine="Sub barPosition_ValueChanged (Value As Int, UserCh";
- //BA.debugLineNum = 134;BA.debugLine="If UserChanged = False Then Return 'the value was";
+ //BA.debugLineNum = 126;BA.debugLine="Sub barPosition_ValueChanged (Value As Int, UserCh";
+ //BA.debugLineNum = 127;BA.debugLine="If UserChanged = False Then Return 'the value was";
 if (_userchanged==anywheresoftware.b4a.keywords.Common.False) { 
 if (true) return "";};
- //BA.debugLineNum = 135;BA.debugLine="MediaPlayer1.Position = Value / 100 * MediaPlayer";
+ //BA.debugLineNum = 128;BA.debugLine="MediaPlayer1.Position = Value / 100 * MediaPlayer";
 _mediaplayer1.setPosition((int) (_value/(double)100*_mediaplayer1.getDuration()));
- //BA.debugLineNum = 136;BA.debugLine="If MediaPlayer1.IsPlaying = False Then 'this can";
+ //BA.debugLineNum = 129;BA.debugLine="If MediaPlayer1.IsPlaying = False Then 'this can";
 if (_mediaplayer1.IsPlaying()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 137;BA.debugLine="MediaPlayer1.Play";
+ //BA.debugLineNum = 130;BA.debugLine="MediaPlayer1.Play";
 _mediaplayer1.Play();
  };
- //BA.debugLineNum = 139;BA.debugLine="timer1_Tick 'immediately update the progress labe";
+ //BA.debugLineNum = 132;BA.debugLine="timer1_Tick 'immediately update the progress labe";
 _timer1_tick();
- //BA.debugLineNum = 140;BA.debugLine="End Sub";
+ //BA.debugLineNum = 133;BA.debugLine="End Sub";
 return "";
 }
 public static String  _barvolume_valuechanged(int _value,boolean _userchanged) throws Exception{
- //BA.debugLineNum = 129;BA.debugLine="Sub barVolume_ValueChanged (Value As Int, UserChan";
- //BA.debugLineNum = 130;BA.debugLine="MediaPlayer1.SetVolume(barVolume.Value / 100, bar";
+ //BA.debugLineNum = 122;BA.debugLine="Sub barVolume_ValueChanged (Value As Int, UserChan";
+ //BA.debugLineNum = 123;BA.debugLine="MediaPlayer1.SetVolume(barVolume.Value / 100, bar";
 _mediaplayer1.SetVolume((float) (mostCurrent._barvolume.getValue()/(double)100),(float) (mostCurrent._barvolume.getValue()/(double)100));
- //BA.debugLineNum = 131;BA.debugLine="End Sub";
+ //BA.debugLineNum = 124;BA.debugLine="End Sub";
 return "";
 }
 public static String  _converttotimeformat(int _ms) throws Exception{
 int _seconds = 0;
 int _minutes = 0;
- //BA.debugLineNum = 121;BA.debugLine="Sub ConvertToTimeFormat(ms As Int) As String";
- //BA.debugLineNum = 122;BA.debugLine="Dim seconds, minutes As Int";
+ //BA.debugLineNum = 114;BA.debugLine="Sub ConvertToTimeFormat(ms As Int) As String";
+ //BA.debugLineNum = 115;BA.debugLine="Dim seconds, minutes As Int";
 _seconds = 0;
 _minutes = 0;
- //BA.debugLineNum = 123;BA.debugLine="seconds = Round(ms / 1000)";
+ //BA.debugLineNum = 116;BA.debugLine="seconds = Round(ms / 1000)";
 _seconds = (int) (anywheresoftware.b4a.keywords.Common.Round(_ms/(double)1000));
- //BA.debugLineNum = 124;BA.debugLine="minutes = Floor(seconds / 60)";
+ //BA.debugLineNum = 117;BA.debugLine="minutes = Floor(seconds / 60)";
 _minutes = (int) (anywheresoftware.b4a.keywords.Common.Floor(_seconds/(double)60));
- //BA.debugLineNum = 125;BA.debugLine="seconds = seconds Mod 60";
+ //BA.debugLineNum = 118;BA.debugLine="seconds = seconds Mod 60";
 _seconds = (int) (_seconds%60);
- //BA.debugLineNum = 126;BA.debugLine="Return NumberFormat(minutes, 1, 0) & \":\" & Number";
+ //BA.debugLineNum = 119;BA.debugLine="Return NumberFormat(minutes, 1, 0) & \":\" & Number";
 if (true) return anywheresoftware.b4a.keywords.Common.NumberFormat(_minutes,(int) (1),(int) (0))+":"+anywheresoftware.b4a.keywords.Common.NumberFormat(_seconds,(int) (2),(int) (0));
- //BA.debugLineNum = 127;BA.debugLine="End Sub";
+ //BA.debugLineNum = 120;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -537,63 +524,63 @@ return "";
 }
 public static String  _iv1_click() throws Exception{
 anywheresoftware.b4a.agraham.dialogs.InputDialog.FileDialog _fd = null;
- //BA.debugLineNum = 70;BA.debugLine="Sub iv1_Click";
- //BA.debugLineNum = 71;BA.debugLine="Dim fd As FileDialog";
+ //BA.debugLineNum = 63;BA.debugLine="Sub iv1_Click";
+ //BA.debugLineNum = 64;BA.debugLine="Dim fd As FileDialog";
 _fd = new anywheresoftware.b4a.agraham.dialogs.InputDialog.FileDialog();
- //BA.debugLineNum = 72;BA.debugLine="fd.FilePath = File.DirRootExternal";
+ //BA.debugLineNum = 65;BA.debugLine="fd.FilePath = File.DirRootExternal";
 _fd.setFilePath(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal());
- //BA.debugLineNum = 73;BA.debugLine="fd.Show(\"Choose Your Image\",\"Open\",\"Reset\",\"Cancel";
+ //BA.debugLineNum = 66;BA.debugLine="fd.Show(\"Choose Your Image\",\"Open\",\"Reset\",\"Cancel";
 _fd.Show("Choose Your Image","Open","Reset","Cancel",mostCurrent.activityBA,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null));
- //BA.debugLineNum = 74;BA.debugLine="If fd.Response = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 67;BA.debugLine="If fd.Response = DialogResponse.POSITIVE Then";
 if (_fd.getResponse()==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
- //BA.debugLineNum = 75;BA.debugLine="ml.mv(File.DirRootExternal & \"/GiftAppMaker/asset";
+ //BA.debugLineNum = 68;BA.debugLine="ml.mv(File.DirRootExternal & \"/GiftAppMaker/asset";
 mostCurrent._ml.mv(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets/birthday.mp3",anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets/birthday.bak");
- //BA.debugLineNum = 76;BA.debugLine="File.Copy(fd.FilePath,fd.ChosenName,File.DirRootEx";
+ //BA.debugLineNum = 69;BA.debugLine="File.Copy(fd.FilePath,fd.ChosenName,File.DirRootEx";
 anywheresoftware.b4a.keywords.Common.File.Copy(_fd.getFilePath(),_fd.getChosenName(),anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","birthday.mp3");
- //BA.debugLineNum = 77;BA.debugLine="chm1.Visible = True";
+ //BA.debugLineNum = 70;BA.debugLine="chm1.Visible = True";
 mostCurrent._chm1.setVisible(anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 79;BA.debugLine="If fd.Response = DialogResponse.CANCEL Then";
+ //BA.debugLineNum = 72;BA.debugLine="If fd.Response = DialogResponse.CANCEL Then";
 if (_fd.getResponse()==anywheresoftware.b4a.keywords.Common.DialogResponse.CANCEL) { 
- //BA.debugLineNum = 80;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMake";
+ //BA.debugLineNum = 73;BA.debugLine="File.Delete(File.DirRootExternal & \"/GiftAppMake";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","birthday.mp3");
- //BA.debugLineNum = 81;BA.debugLine="ml.mv(File.DirRootExternal & \"/GiftAppMaker/asse";
+ //BA.debugLineNum = 74;BA.debugLine="ml.mv(File.DirRootExternal & \"/GiftAppMaker/asse";
 mostCurrent._ml.mv(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets/birthday.bak",anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets/birthday.mp3");
- //BA.debugLineNum = 82;BA.debugLine="chm1.Visible = False";
+ //BA.debugLineNum = 75;BA.debugLine="chm1.Visible = False";
 mostCurrent._chm1.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 85;BA.debugLine="End Sub";
+ //BA.debugLineNum = 78;BA.debugLine="End Sub";
 return "";
 }
 public static String  _iv2_click() throws Exception{
- //BA.debugLineNum = 87;BA.debugLine="Sub iv2_Click";
- //BA.debugLineNum = 88;BA.debugLine="If MediaPlayer1.IsPlaying = False Then";
+ //BA.debugLineNum = 80;BA.debugLine="Sub iv2_Click";
+ //BA.debugLineNum = 81;BA.debugLine="If MediaPlayer1.IsPlaying = False Then";
 if (_mediaplayer1.IsPlaying()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 89;BA.debugLine="MediaPlayer1.Load(File.DirRootExternal & \"/GiftAp";
+ //BA.debugLineNum = 82;BA.debugLine="MediaPlayer1.Load(File.DirRootExternal & \"/GiftAp";
 _mediaplayer1.Load(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/GiftAppMaker/assets","birthday.mp3");
- //BA.debugLineNum = 90;BA.debugLine="MediaPlayer1.Play";
+ //BA.debugLineNum = 83;BA.debugLine="MediaPlayer1.Play";
 _mediaplayer1.Play();
- //BA.debugLineNum = 91;BA.debugLine="timer1.Enabled = True";
+ //BA.debugLineNum = 84;BA.debugLine="timer1.Enabled = True";
 _timer1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 93;BA.debugLine="End Sub";
+ //BA.debugLineNum = 86;BA.debugLine="End Sub";
 return "";
 }
 public static String  _iv3_click() throws Exception{
- //BA.debugLineNum = 95;BA.debugLine="Sub iv3_Click";
- //BA.debugLineNum = 96;BA.debugLine="If MediaPlayer1.IsPlaying Then";
+ //BA.debugLineNum = 88;BA.debugLine="Sub iv3_Click";
+ //BA.debugLineNum = 89;BA.debugLine="If MediaPlayer1.IsPlaying Then";
 if (_mediaplayer1.IsPlaying()) { 
- //BA.debugLineNum = 97;BA.debugLine="MediaPlayer1.Stop";
+ //BA.debugLineNum = 90;BA.debugLine="MediaPlayer1.Stop";
 _mediaplayer1.Stop();
  };
- //BA.debugLineNum = 99;BA.debugLine="End Sub";
+ //BA.debugLineNum = 92;BA.debugLine="End Sub";
 return "";
 }
 public static String  _iv4_click() throws Exception{
- //BA.debugLineNum = 101;BA.debugLine="Sub iv4_Click";
- //BA.debugLineNum = 102;BA.debugLine="StartActivity(Step5)";
+ //BA.debugLineNum = 94;BA.debugLine="Sub iv4_Click";
+ //BA.debugLineNum = 95;BA.debugLine="StartActivity(Step5)";
 anywheresoftware.b4a.keywords.Common.StartActivity(mostCurrent.activityBA,(Object)(mostCurrent._step5.getObject()));
- //BA.debugLineNum = 103;BA.debugLine="End Sub";
+ //BA.debugLineNum = 96;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
@@ -608,15 +595,15 @@ _ad = new anywheresoftware.b4a.objects.Timer();
 return "";
 }
 public static String  _timer1_tick() throws Exception{
- //BA.debugLineNum = 113;BA.debugLine="Sub timer1_Tick";
- //BA.debugLineNum = 114;BA.debugLine="If MediaPlayer1.IsPlaying Then";
+ //BA.debugLineNum = 106;BA.debugLine="Sub timer1_Tick";
+ //BA.debugLineNum = 107;BA.debugLine="If MediaPlayer1.IsPlaying Then";
 if (_mediaplayer1.IsPlaying()) { 
- //BA.debugLineNum = 115;BA.debugLine="barPosition.Value = MediaPlayer1.Position / Medi";
+ //BA.debugLineNum = 108;BA.debugLine="barPosition.Value = MediaPlayer1.Position / Medi";
 mostCurrent._barposition.setValue((int) (_mediaplayer1.getPosition()/(double)_mediaplayer1.getDuration()*100));
- //BA.debugLineNum = 116;BA.debugLine="lblPosition.Text = \"Position: \" & ConvertToTimeF";
+ //BA.debugLineNum = 109;BA.debugLine="lblPosition.Text = \"Position: \" & ConvertToTimeF";
 mostCurrent._lblposition.setText((Object)("Position: "+_converttotimeformat(_mediaplayer1.getPosition())+" ("+_converttotimeformat(_mediaplayer1.getDuration())+")"));
  };
- //BA.debugLineNum = 119;BA.debugLine="End Sub";
+ //BA.debugLineNum = 112;BA.debugLine="End Sub";
 return "";
 }
 }

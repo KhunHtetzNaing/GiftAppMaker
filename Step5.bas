@@ -29,6 +29,7 @@ Dim sd As String
 	Dim Banner As AdView
 Dim Interstitial As mwAdmobInterstitial
 Dim p As Phone
+Dim iv1 As ImageView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -83,7 +84,7 @@ Sub b_Click
 	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p4.bak")
 	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","p5.bak")
 	File.Delete(File.DirRootExternal & "/GiftAppMaker/assets","birthday.bak")
-	ProgressDialogShow("Building Your Apk! Please Wait...")
+	ProgressDialogShow("Building Your Apk!" & CRLF & "Please Wait...")
 	T.Enabled = True
 	zs.Initialize
 End Sub
